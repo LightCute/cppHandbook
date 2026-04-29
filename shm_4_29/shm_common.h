@@ -3,7 +3,8 @@
 
 inline constexpr int RING_MAX_COUNT = 8;
 inline constexpr uint32_t FRAME_MAX_SIZE = 2 * 1024 * 1024;
-
+inline constexpr const char* SHM_KEY_PATH = "/tmp/video_tmp_buf";
+inline constexpr int SHM_KEY_ID = 88;
 
 struct VideoFrameHead   
 {

@@ -16,7 +16,7 @@ public:
     ShmWriter& operator=(const ShmWriter&) = delete;
 
     bool init();
-    bool write_frame(VideoFrameHead& head, uint8_t* data);
+    bool write_frame(const VideoFrameHead& head, uint8_t* data);
 
 };
 

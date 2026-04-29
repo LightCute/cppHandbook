@@ -2,8 +2,7 @@
 #include <iostream>
 #include <cstring>
 
-inline constexpr const char* SHM_KEY_PATH = "/tmp/video_tmp_buf";
-inline constexpr int SHM_KEY_ID = 88;
+
 
 ShmWriter::ShmWriter() = default;
 ShmWriter::~ShmWriter(){
@@ -45,7 +44,7 @@ bool ShmWriter::init(){
     return true;
 }
 
-bool ShmWriter::write_frame(VideoFrameHead& head, uint8_t* data){
+bool ShmWriter::write_frame(const VideoFrameHead& head, uint8_t* data){
     if(!m_inited || !m_shm_ptr || !data)
         return false;
     pthread_mutex_lock(&(m_shm_ptr->mtx));
